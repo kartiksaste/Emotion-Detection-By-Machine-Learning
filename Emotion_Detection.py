@@ -28,11 +28,14 @@ if model_file:
 
     # Start the webcam capture
     st.write("Starting webcam...")
+
+    # OpenCV VideoCapture object to read frames from the webcam
     cap = cv2.VideoCapture(0)
 
     while True:
         ret, frame = cap.read()
         if not ret:
+            st.write("Failed to grab frame")
             break
 
         # Convert to grayscale
@@ -60,11 +63,14 @@ if model_file:
             else:
                 cv2.putText(frame, 'No Face Found', (20, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-        # Display the resulting frame
-        st.image(frame, channels="BGR", use_column_width=True)
+        # Convert frame to RGB for Streamlit display
+        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-        # Stop webcam on pressing 'q'
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        # Display the frame on Streamlit
+        st.image(frame_rgb, channels="RGB", use_column_width=True)
+
+        # Optionally, add a break condition to stop the webcam stream (e.g., after 5 frames or by pressing a button)
+        if st.button("Stop Webcam"):
             break
 
     cap.release()
