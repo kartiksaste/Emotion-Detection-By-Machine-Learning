@@ -19,8 +19,8 @@ st.title("Emotion Detection from Image")
 # Upload the model file
 model_file = st.file_uploader("Upload Trained Model (.h5 file)", type="h5")
 
-# Upload image file
-image_file = st.file_uploader("Upload an Image", type=["jpg", "jpeg", "png"])
+# Upload image file (only allow .jpeg and .png)
+image_file = st.file_uploader("Upload an Image", type=["jpeg", "png"])
 
 if model_file and image_file:
     # Load the uploaded model
