@@ -12,7 +12,7 @@ This project implements a real-time emotion detection system using a pre-trained
 ## Installation
 
 1. Clone the repository:
-   git clone https://github.com/your-username/emotion-detection.git
+   git clone https://github.com/kartiksaste/Emotion-Detection-By-Machine-Learning
    
    cd emotion-detection
    
