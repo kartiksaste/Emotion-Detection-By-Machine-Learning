@@ -1,5 +1,6 @@
 # train_emotion_model_modified.py
-# COMPLETE TRAINING CODE WITH 10 EPOCHS
+# COMPLETE TRAINING CODE WITH 15 EPOCHS
+# For More Accuracy Increase EPOCHS
 
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
