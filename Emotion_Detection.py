@@ -3,6 +3,7 @@ import numpy as np
 import tensorflow as tf
 import cv2
 import time
+import os
 
 # Load the trained model
 def load_model(model_file):
@@ -19,8 +20,14 @@ st.title("Live Emotion Detection")
 model_file = st.file_uploader("Upload Trained Model (.h5 file)", type="h5")
 
 if model_file:
+    # Save the uploaded model file temporarily
+    model_path = os.path.join("temp_model.h5")
+    
+    with open(model_path, "wb") as f:
+        f.write(model_file.getbuffer())
+    
     # Load the uploaded model
-    model = load_model(model_file)
+    model = load_model(model_path)
     
     # Display message
     st.write("Starting webcam...")
