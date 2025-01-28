@@ -4,7 +4,7 @@ import cv2
 import tensorflow as tf
 
 # Load the trained model
-model = tf.keras.models.load_model('FileLocation\\emotion_detection_model.h5')
+model = tf.keras.models.load_model('Trained_Model.h5')
 
 # Dictionary to label emotion categories
 emotion_dict = {0: "Angry", 1: "Disgust", 2: "Fear", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprise"}
