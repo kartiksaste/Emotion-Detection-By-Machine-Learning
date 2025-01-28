@@ -4,7 +4,7 @@ This project implements a real-time emotion detection system using a pre-trained
 
 ## Features
 - Real-time face detection using OpenCV's Haar Cascade Classifier.
-- Emotion classification using a pre-trained `.h5` model.
+- Emotion classification using a trained `.h5` model.
 - Displays detected emotions on the live webcam feed.
 
 
